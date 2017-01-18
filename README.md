@@ -10,7 +10,7 @@ RedSocks2 for OpenWrt
 
  软件包只包含 [redsocks2][1] 的可执行文件（为了防止和luci冲突，我把/etc/conifg,/etc/init.d中的文件全部去掉了）  
  本项目是 [RedSocks2][1] 在 OpenWrt 上的移植  
- 当前版本: 0.65(2016.12.3最后一次commit)  
+ 当前版本: 0.66(2016.12.3最后一次commit)  
  可以修改Makefile中PKG_SOURCE_VERSION为你需要编译的commit id
  
 新版特性
