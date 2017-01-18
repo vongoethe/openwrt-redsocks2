@@ -1,12 +1,29 @@
 RedSocks2 for OpenWrt
 ===
+版本 0.65
+
+为编译[此固件][N]所需依赖包而写的Makefile
+
 
 简介
 ---
 
+ 软件包只包含 [shadowsocksr-libev][1] 的可执行文件  
  本项目是 [RedSocks2][1] 在 OpenWrt 上的移植  
- 当前版本: 0.60-2  
- [预编译 IPK 下载][2]  
+ 当前版本: 0.65(2016.12.3最后一次commit)  
+ 可以修改Makefile中PKG_SOURCE_VERSION为你需要编译的commit id
+ 
+新版特性
+---
+
+支持Socks5协议的透明代理
+
+内置Shadowsocks协议，支持UDP转发，无需再专门安装Shadowsocks
+
+支持透明代理转VPN，可以把流量直接转发到VPN的虚拟网卡上去
+
+支持UDP over TCP，个人感觉非常实用
+
 
 编译
 ---
@@ -18,7 +35,7 @@ RedSocks2 for OpenWrt
    tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
    cd OpenWrt-SDK-ar71xx-*
    # 获取 Makefile
-   git clone https://github.com/aa65535/openwrt-redsocks2.git package/redsocks2
+   git clone https://github.com/AlexZhuo/openwrt-redsocks2.git package/redsocks2
    # 选择要编译的包 Network -> redsocks2
    make menuconfig
    # 开始编译
@@ -27,13 +44,7 @@ RedSocks2 for OpenWrt
 
 ----------
 
- Name                     | Description
- -------------------------|-----------------------------------
- [openwrt-chinadns][5]    | ChinaDNS-C for OpenWrt
- [openwrt-dnsmasq][6]     | Dnsmasq Patch & Makefile for OpenWrt
- [openwrt-shadowsocks][7] | Shadowsocks-libev for OpenWrt
- [openwrt-shadowvpn][8]   | ShadowVPN for OpenWrt
- [openwrt-dist-luci][L]   | LuCI Applications for OpenWrt-dist
+
 
 
   [1]: https://github.com/semigodking/redsocks
@@ -44,3 +55,4 @@ RedSocks2 for OpenWrt
   [8]: https://github.com/aa65535/openwrt-shadowvpn
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
   [L]: https://github.com/aa65535/openwrt-dist-luci
+  [N]: http://www.right.com.cn/forum/thread-198649-1-1.html
