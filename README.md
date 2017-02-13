@@ -8,21 +8,24 @@ RedSocks2 for OpenWrt
 简介
 ---
 
- 软件包只包含 [redsocks2][1] 的可执行文件（为了防止和luci冲突，我把/etc/conifg,/etc/init.d中的文件全部去掉了）  
+ 软件包只包含 [redsocks2][1] 的可执行文件,可配合[luci-app-redsocks2][M]使用
+ 
  本项目是 [RedSocks2][1] 在 OpenWrt 上的移植  
+ 
  当前版本: 0.66(2016.12.3最后一次commit)  
+ 
  可以修改Makefile中PKG_SOURCE_VERSION为你需要编译的commit id
  
 新版特性
 ---
 
-支持Socks5协议的透明代理
+1、支持Socks5协议的透明代理
 
-内置Shadowsocks协议，支持UDP转发，无需再专门安装Shadowsocks
+2、内置Shadowsocks协议，支持全局UDP转发，无需再专门安装Shadowsocks
 
-支持透明代理转VPN，可以把流量直接转发到VPN的虚拟网卡上去
+3、支持透明代理转VPN，可以把流量直接转发到VPN的虚拟网卡上去
 
-支持UDP over TCP，个人感觉非常实用
+4、支持TCPDNS，配合透明代理不仅可有效避免污染，还能实现国内外智能分流
 
 配置文件写法请[点击此处][1]
 
@@ -57,3 +60,4 @@ RedSocks2 for OpenWrt
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
   [L]: https://github.com/aa65535/openwrt-dist-luci
   [N]: http://www.right.com.cn/forum/thread-198649-1-1.html
+  [M]: https://github.com/AlexZhuo/luci-app-redsocks2
