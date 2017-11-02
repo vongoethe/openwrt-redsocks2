@@ -40,11 +40,25 @@ RedSocks2 for OpenWrt
    cd OpenWrt-SDK-ar71xx-*
    # 获取 Makefile
    git clone https://github.com/AlexZhuo/openwrt-redsocks2.git package/redsocks2
+   # 安装依赖包源码
+   ./scripts/feeds update base
+   ./scripts/feeds install libevent2
    # 选择要编译的包 Network -> redsocks2
    make menuconfig
    # 开始编译
    make package/redsocks2/compile V=99
    ```
+
+编译错误解决方案
+---
+
+1、报错`utils.h:7:26: fatal error: event2/event.h: No such file or directory`
+
+错误原因：SDK没有找到libevent2的源码，可能是你的feeds源有问题
+
+解决方案：直接把libevnet2的Makefile放到packages目录下 
+
+git clone https://github.com/AlexZhuo/openwrt-feeds.git package/feeds
 
 ----------
 
