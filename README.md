@@ -1,6 +1,6 @@
 RedSocks2 for OpenWrt
 ===
-版本 0.66
+版本 0.67
 
 为编译[此固件][N]所需依赖包而写的Makefile
 
